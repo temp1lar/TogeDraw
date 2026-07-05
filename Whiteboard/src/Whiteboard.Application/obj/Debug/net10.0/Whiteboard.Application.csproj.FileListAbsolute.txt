@@ -1,0 +1,16 @@
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\bin\Debug\net10.0\Whiteboard.Application.deps.json
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\bin\Debug\net10.0\Whiteboard.Application.dll
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\bin\Debug\net10.0\Whiteboard.Application.pdb
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\bin\Debug\net10.0\Whiteboard.Domain.dll
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\bin\Debug\net10.0\Whiteboard.Domain.pdb
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\Whiteboard.Application.csproj.AssemblyReference.cache
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\Whiteboard.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\Whiteboard.Application.AssemblyInfoInputs.cache
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\Whiteboard.Application.AssemblyInfo.cs
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\Whiteboard.Application.csproj.CoreCompileInputs.cache
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\Whiteboard.Application.sourcelink.json
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\Whiteboa.993A3373.Up2Date
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\Whiteboard.Application.dll
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\refint\Whiteboard.Application.dll
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\Whiteboard.Application.pdb
+F:\TogeDraw\Whiteboard\src\Whiteboard.Application\obj\Debug\net10.0\ref\Whiteboard.Application.dll

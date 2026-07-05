@@ -1,0 +1,397 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+/* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
+@media (max-width: 768px) {
+  /* Холст на весь экран */
+  #canvas-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Header компактнее */
+  .header {
+    padding: 8px;
+    height: 48px;
+  }
+
+  .header-title {
+    font-size: 14px;
+  }
+
+  .header-center input {
+    max-width: 120px;
+    font-size: 12px;
+  }
+
+  .header-center button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  /* SidebarRight — скрыт по умолчанию, выдвижной */
+  .sidebar-right {
+    position: fixed;
+    right: -280px;
+    top: 48px;
+    height: calc(100vh - 48px);
+    width: 280px;
+    transition: right 0.3s ease;
+    z-index: 100;
+    background: var(--bg-secondary, #1e1e1e);
+    box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+  }
+
+  .sidebar-right.open {
+    right: 0;
+  }
+
+  /* Toolbar — крупнее для тача */
+  .toolbar-container {
+    bottom: 8px;
+  }
+
+  .toolbar-container button,
+  .toolbar-container .tool-btn {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  /* Кнопка переключения toolbar */
+  .tool-toggle-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* ZoomControls — компактнее */
+  .zoom-controls {
+    bottom: 70px;
+    right: 8px;
+  }
+
+  .zoom-controls button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Глобальная кнопка выхода — больше */
+  .global-exit-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Отключаем hover-эффекты на мобильных */
+  .tool-btn:hover {
+    transform: none;
+  }
+
+  /* Предотвращаем скролл при рисовании */
+  canvas {
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text-primary, #ffffff);
+  text-align: center;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* ======= КАРУСЕЛЬ КОМНАТ (ФИНАЛЬНАЯ КОМПАКТНАЯ) ======= */
+.rooms-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 16px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-height: 155px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.rooms-swiper {
+  width: 100%;
+  padding-bottom: 34px !important;
+}
+
+.rooms-swiper .swiper-slide {
+  height: auto !important;
+  min-height: 155px !important;
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.room-card {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 2px;
+}
+
+.room-card-inner {
+  background: var(--bg-secondary);
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3) !important;
+  height: 155px !important;          /* Жесткая высота карточки */
+  min-height: 155px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.room-card-inner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+}
+
+/* Изображение: строго 95px, сохраняет свои пропорции (без растягивания!) */
+.room-card-image {
+  height: 95px;
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.room-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;       /* Сохраняет пропорции картинки, обрезая лишнее */
+  object-position: center !important; /* Всегда центрирует изображение */
+  transition: transform 0.3s;
+}
+
+.room-card-image:hover img {
+  transform: scale(1.05);
+}
+
+.room-card-name {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.room-card-actions {
+  display: flex;
+  gap: 6px;
+  padding: 0 12px 10px;
+  justify-content: center;
+  flex: 1; /* Займет оставшееся место */
+  align-items: flex-start;
+  padding-top: 4px;
+}
+
+.room-card-actions button {
+  flex: 1;
+  max-width: 70px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-edit {
+  background: #fbbf24;
+  color: #000;
+}
+.btn-edit:hover {
+  background: #f59e0b;
+  transform: scale(1.05);
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: white;
+}
+.btn-delete:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #3b82f6 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #3b82f6 !important;
+}
+
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ (Уменьшаем до 120px) ===== */
+@media (max-width: 768px) {
+  .rooms-container { min-height: 120px; }
+  .rooms-swiper .swiper-slide { min-height: 120px !important; }
+  .room-card-inner {
+    height: 120px !important;
+    min-height: 120px !important;
+    border-radius: 8px !important;
+  }
+  .room-card-image {
+    height: 70px !important;
+  }
+  .room-card-name {
+    height: 22px !important;
+    font-size: 11px !important;
+    padding: 0 4px !important;
+  }
+  .room-card-actions button {
+    font-size: 10px !important;
+    padding: 2px 4px !important;
+    max-width: 50px !important;
+  }
+}

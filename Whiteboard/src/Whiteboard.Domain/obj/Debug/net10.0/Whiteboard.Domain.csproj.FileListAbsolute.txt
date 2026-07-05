@@ -1,0 +1,12 @@
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\bin\Debug\net10.0\Whiteboard.Domain.deps.json
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\bin\Debug\net10.0\Whiteboard.Domain.dll
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\bin\Debug\net10.0\Whiteboard.Domain.pdb
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\obj\Debug\net10.0\Whiteboard.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\obj\Debug\net10.0\Whiteboard.Domain.AssemblyInfoInputs.cache
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\obj\Debug\net10.0\Whiteboard.Domain.AssemblyInfo.cs
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\obj\Debug\net10.0\Whiteboard.Domain.csproj.CoreCompileInputs.cache
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\obj\Debug\net10.0\Whiteboard.Domain.sourcelink.json
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\obj\Debug\net10.0\Whiteboard.Domain.dll
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\obj\Debug\net10.0\refint\Whiteboard.Domain.dll
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\obj\Debug\net10.0\Whiteboard.Domain.pdb
+F:\TogeDraw\Whiteboard\src\Whiteboard.Domain\obj\Debug\net10.0\ref\Whiteboard.Domain.dll
